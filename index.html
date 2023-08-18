@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Print Form Data</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./static/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./static/css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <!-- Logo and Company Name -->
+        <a class="navbar-brand fs-4 d-flex align-items-center" href="./">
+          <img
+            src="./static/imgs/logo1.png"
+            alt="Company Logo"
+            width="60"
+            height="60"
+            class="d-inline-block align-text-top ms-2"
+          />
+          شركة سحاب للسياحة
+        </a>
+
+        <!-- Navbar Toggler Button -->
+        <button
+          class="navbar-toggler d-print-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse d-print-none" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./clients.html">العملاء</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- ................................................................. -->
+    <section class="form-data d-print-none">
+      <div class="container bg-white rounded-1">
+        <!-- <h2>استمارة البيانات</h2> -->
+        <form class="p-3 fs-5" id="myForm" method="post">
+          <h1 class="text-center mb-4">حجز فندق</h1>
+
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="receptionist">مسؤول الحجز:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="receptionist"
+                  name="receptionist"
+                  required
+                />
+              </div>
+              <!-- pattern="/^[a-zA-Z ]*$/" -->
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="user-name">اسم العميل:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="user-name"
+                  name="user-name"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="client-phone">رقم هاتف العميل:</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="client-phone"
+                  name="client-phone"
+                  required
+                  oninput="this.value = this.value.replace(/\D/g, '').substring(0, 11);"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="client-phone-second">رقم الموبايل:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="client-phone-second"
+                  name="client-phone-second"
+                  oninput="this.value = this.value.replace(/\D/g, '').substring(0, 11);"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="hotel">الفندق:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="hotel"
+                  name="hotel"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="client-seats">عدد الكراسى:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="client-seats"
+                  name="client-seats"
+                  oninput="preventNegative(event)"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="room-number">عدد الغرف:</label>
+                <div class="row">
+                  <div class="col-4">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="room-single"
+                      name="room-single"
+                      placeholder="single"
+                      oninput="preventNegative(event)"
+                    />
+                  </div>
+                  <div class="col-4">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="room-double"
+                      name="room-double"
+                      placeholder="double"
+                      oninput="preventNegative(event)"
+                    />
+                  </div>
+                  <div class="col-4">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="room-trible"
+                      name="room-trible"
+                      placeholder="trible"
+                      oninput="preventNegative(event)"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="adults-number">عدد البالغين:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="adults-number"
+                  name="adults-number"
+                  oninput="preventNegative(event)"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="children-under-6">تحت 6 سنوات:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="children-under-6"
+                  name="children-under-6"
+                  oninput="preventNegative(event)"
+                />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="children-above-6">فوق 6 سنوات وحتى 12:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="children-above-6"
+                  name="children-above-6"
+                  oninput="preventNegative(event)"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="roomType">نوع الغرفة:</label>
+                <select class="form-control" id="roomType" name="roomType">
+                  <option value="standerd">Stander</option>
+                  <option value="suite">Suite</option>
+                  <!-- Add more options as needed -->
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="residence">نوع الاقامة:</label>
+                <select class="form-control" id="residence" name="residence">
+                  <option value="standerd">Stander</option>
+                  <option value="suite">Suite</option>
+                  <!-- Add more options as needed -->
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="stayDuration">مدة الرحلة:</label>
+                <div class="d-flex">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="stayDuration"
+                    name="stayDuration"
+                    oninput="preventNegative(event)"
+                    required
+                  />
+                  <span class="me-2">
+                    ايام على
+                    <span id="stayDurationNights">...</span> ليالى</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="period-from">فترة الحجز:</label>
+                <div class="row">
+                  <div class="col-md-6 d-flex">
+                    <label for="period-from">من:</label>
+                    <input
+                      type="date"
+                      class="me-2 form-control"
+                      id="period-from"
+                      name="period-from"
+                    />
+                  </div>
+                  <div class="col-md-6 d-flex">
+                    <label for="period-to">الى:</label>
+                    <input
+                      type="date"
+                      class="me-2 form-control"
+                      id="period-to"
+                      name="period-to"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="personValue">قيمة الفرد:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="personValue"
+                  name="personValue"
+                  oninput="preventNegative(event)"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="totalAmount">اجمالي الرحلة:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="totalAmount"
+                  name="totalAmount"
+                  oninput="preventNegative(event)"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="paidAmount">المبلغ المدفوع:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="paidAmount"
+                  name="paidAmount"
+                  oninput="preventNegative(event)"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="balance">الرصيد المتبقى:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="balance"
+                  name="balance"
+                  oninput="preventNegative(event)"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="notes">ملاحظات :</label>
+                <textarea
+                  class="form-control w-100 overflow-hidden"
+                  id="notes"
+                  name="notes"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex">
+              <button
+                id="submit"
+                type="submit"
+                class="btn btn-dark me-auto px-4"
+              >
+                تأكيد
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <div id="userDataTable" class="table d-none">
+      <div class="container bg-white">
+        <ul class="row" id="output-row"></ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <hr />
+    </div>
+
+    <!-- 
+      <form id="myForm" action="#" method="post">
+        <input id="name" type="text" name="name" placeholder="name" />
+        <input id="email" type="text" name="email" placeholder="email" />
+        <input type="submit" value="Submit" />
+      </form> 
+    -->
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore-compat.js"></script> -->
+    <script src="./static/js/bootstrap.min.js"></script>
+    <script type="module" src="static/js/firebase.js"></script>
+    <script src="./static/js/print.js"></script>
+    <script src="./static/js/index.js"></script>
+  </body>
+</html>
