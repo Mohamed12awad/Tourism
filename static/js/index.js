@@ -6,6 +6,7 @@ const receptionistInput = document.getElementById("receptionist");
 const userNameInput = document.getElementById("user-name");
 const clientPhoneInput = document.getElementById("client-phone");
 const clientPhoneSecondInput = document.getElementById("client-phone-second");
+const tripName = document.getElementById("tripName");
 const hotelInput = document.getElementById("hotel");
 const clientSeatsInput = document.getElementById("client-seats");
 const roomSingleInput = document.getElementById("room-single");
@@ -26,12 +27,17 @@ const remainingAmountInput = document.getElementById("balance");
 const notesInput = document.getElementById("notes");
 const submitBtn = document.getElementById("submit");
 
-//
-
 stayDurationInput.addEventListener("input", () => {
-  const stayDurationNights = document.getElementById("stayDurationNights");
-  stayDurationNights.innerText = Number(stayDurationInput.value) + 1;
+  const stayDurationNights = document.querySelector(".stayDurationNights");
+  if (stayDurationInput.value > 0) {
+    stayDurationNights.innerText = Number(stayDurationInput.value) - 1;
+  }
 });
+
+let remainingCalc = () => {
+  remainingAmountInput.value =
+    Number(totalAmountInput.value) - Number(paidAmountInput.value);
+};
 
 function preventNegative(e) {
   const input = e.target;

@@ -36,10 +36,6 @@ const snapSize = querySnapshot.size;
 
 const submitBtn = document.querySelector("#submit");
 
-// Collect the form data
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-// });
 if (submitBtn) {
   submitBtn.addEventListener("click", async (e) => {
     e.preventDefault();
@@ -50,6 +46,7 @@ if (submitBtn) {
       userName: userNameInput.value,
       clientPhone: clientPhoneInput.value,
       clientPhoneSecond: clientPhoneSecondInput.value,
+      tripName: tripName.value,
       hotel: hotelInput.value,
       clientSeats: clientSeatsInput.value,
       roomSingle: roomSingleInput.value,
@@ -68,7 +65,6 @@ if (submitBtn) {
       paidAmount: paidAmountInput.value,
       remainingAmount: remainingAmountInput.value,
       notes: notesInput.value,
-      // dateAdded: new Date(),
     };
     let val = Object.keys(formData);
     // console.log(first);

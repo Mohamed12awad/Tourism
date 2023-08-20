@@ -1,8 +1,16 @@
+const date = new Date();
+const [year, month, day] = [
+  date.getFullYear(),
+  date.getMonth() + 1,
+  date.getDate(),
+];
+
 const formFields = [
-  { id: "receptionist", label: "الموظف المسئول:" },
+  { id: "receptionist", label: "الموظف مسؤول :" },
+  { id: "client-phone-second", label: "هاتف مسؤول الحجز:" },
   { id: "user-name", label: "اسم العميل:" },
   { id: "client-phone", label: "رقم هاتف العميل:" },
-  { id: "client-phone-second", label: "رقم الموبايل:" },
+  { id: "hotel", label: "اسم الرحلة:" },
   { id: "hotel", label: "الفندق:" },
   { id: "client-seats", label: "عدد الكراسى:" },
   { id: "room-single", label: "غرفة سنجل:" },
@@ -35,13 +43,26 @@ function printUserDataTable() {
   formFields.forEach((field) => {
     const inputElement = document.getElementById(field.id);
     const outputDiv = document.createElement("li");
-    outputDiv.classList.add(
-      "col-6",
-      "output-div",
-      "d-flex",
-      "justify-content-between",
-      "border-bottom"
-    );
+    if (field.id === "notes") {
+      outputDiv.classList.add(
+        "col-12",
+        "output-div",
+        "d-flex",
+        "justify-content-between",
+        "border-bottom",
+        "pt-2"
+      );
+    }
+    {
+      outputDiv.classList.add(
+        "col-6",
+        "output-div",
+        "d-flex",
+        "justify-content-between",
+        "border-bottom",
+        "pt-1"
+      );
+    }
 
     const strongElement = document.createElement("strong");
     strongElement.textContent = field.label;
@@ -70,18 +91,21 @@ function printUserDataTable() {
         <link href="./static/css/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="./static/css/style.css" />
       </head>
-        <body>
+        <body class="print-body border border-black px-3 bg-white">
         <nav class="navbar">
         <div class="container d-flex flex-row-reverse">
           <a title="Main" href="#" class="logo navbar-brand">
-            <img src="./static/imgs/logo1.png" height="80" width="80" alt="" />
+            <img src="./static/imgs/logo1.png" height="120" width="120" alt="" />
           </a>
-          <a class="navbar-brand fs-2">شركة سحاب للسياحة</a>
+          <div>
+          تاريخ الحجز: ${day}/${month}/${year}
+          </div>
         </div>
       </nav>
+
           ${userDataTable.innerHTML}
   
-          <section class="details d-print-block">
+          <section class="details d-print-block mt-5">
           <div class="container">
             <h2>شــــــــروط الحجـــز :</h2>
             <ul class="list-group">

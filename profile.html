@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./static/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <title>Client Profile</title>
+  </head>
+  <body class="bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <!-- Logo and Company Name -->
+        <a class="navbar-brand fs-4 d-flex align-items-center" href="./">
+          <img
+            src="./static/imgs/logo1.png"
+            alt="Company Logo"
+            width="60"
+            height="60"
+            class="d-inline-block align-text-top ms-2"
+          />
+          شركة سحاب للسياحة
+        </a>
+
+        <!-- Navbar Toggler Button -->
+        <button
+          class="navbar-toggler d-print-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse d-print-none" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./clients.html">العملاء</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="mb-5">
+      <div class="container">
+        <div id="user-profile">
+          <!-- <h2>User Profile</h2> -->
+          <h4 class="my-3">البيانات الشخصية</h4>
+          <div class="row">
+            <div class="col-12">
+              <ul class="list-group p-0">
+                <li id="userName" class="list-group-item d-flex"></li>
+                <li id="clientPhone" class="list-group-item d-flex"></li>
+              </ul>
+            </div>
+          </div>
+          <h4 class="my-3">بيانات الحجز</h4>
+          <div class="row">
+            <ul class="list-group col-6">
+              <li id="receptionist" class="list-group-item d-flex"></li>
+              <li id="clientPhoneSecond" class="list-group-item d-flex"></li>
+              <li id="receptNumber" class="list-group-item d-flex"></li>
+              <li id="roomType" class="list-group-item d-flex"></li>
+              <li id="residence" class="list-group-item d-flex"></li>
+              <li id="stayDuration" class="list-group-item d-flex"></li>
+              <li id="periodFrom" class="list-group-item d-flex"></li>
+              <li id="periodTo" class="list-group-item d-flex"></li>
+              <li id="tripName" class="list-group-item d-flex"></li>
+              <li id="hotel" class="list-group-item d-flex"></li>
+              <li id="clientSeats" class="list-group-item d-flex"></li>
+            </ul>
+            <ul class="list-group col-6">
+              <li id="roomSingle" class="list-group-item d-flex"></li>
+              <li id="roomDouble" class="list-group-item d-flex"></li>
+              <li id="roomTrible" class="list-group-item d-flex"></li>
+              <li id="adultsNumber" class="list-group-item d-flex"></li>
+              <li id="childrenUnder6" class="list-group-item d-flex"></li>
+              <li id="childrenAbove6" class="list-group-item d-flex"></li>
+              <li id="personValue" class="list-group-item d-flex"></li>
+              <li id="totalAmount" class="list-group-item d-flex"></li>
+              <li id="paidAmount" class="list-group-item d-flex"></li>
+              <li id="remainingAmount" class="list-group-item d-flex"></li>
+              <li id="notes" class="list-group-item d-flex"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./static/js/bootstrap.min.js"></script>
+    <script type="module" src="static/js/firebase.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script type="module" src="static/js/profile.js"></script>
+  </body>
+</html>

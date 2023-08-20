@@ -18,36 +18,15 @@ label {
   display: inline !important;
   /* width: auto !important; */
 }
-#stayDuration {
-  width: 100px !important;
-}
-[id*="room-"],
-.shrink {
-  width: 100px !important;
-}
 
-/* body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f4f4f4;
+.details {
+  margin-top: 120px;
 }
-
-.form-container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-} */
-
+/* 
 .step {
   display: none;
 }
 
 .step.active {
   display: block;
-}
+} */
