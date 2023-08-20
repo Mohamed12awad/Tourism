@@ -48,10 +48,21 @@ const fieldMappings = [
 fieldMappings.forEach((field) => {
   const element = document.getElementById(field.id);
   if (element) {
-    element.innerHTML = `
-    <span class="w-50 d-block">${
-      field.label
-    }</span> <span class="w-50 d-block">${userData[field.id]}</span>`;
+    if (field.id == "stayDuration") {
+      element.innerHTML = `
+      <span class="w-50 d-block"><b>${
+        field.label
+      }</b></span> <span class="w-50 d-block">${userData[field.id]} ايام على ${
+        userData[field.id] - 1
+      } ليالى</span>`;
+    } else {
+      element.innerHTML = `
+      <span class="w-50 d-block"><b>${
+        field.label
+      }</b></span> <span class="w-50 d-block">${
+        userData[field.id] == 0 ? "-" : userData[field.id]
+      }</span>`;
+    }
   }
 });
 
