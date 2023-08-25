@@ -37,7 +37,7 @@ const snapSize = querySnapshot.size;
 const submitBtn = document.querySelector("#submit");
 
 if (submitBtn) {
-  submitBtn.addEventListener("click", async (e) => {
+  myForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = {
       receptNumber: (snapSize + 1).toString(),

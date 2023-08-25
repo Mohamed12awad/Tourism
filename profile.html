@@ -47,6 +47,9 @@
             <li class="nav-item active">
               <a class="nav-link" href="./clients.html">العملاء</a>
             </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="./trips.html">الرحلات</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -55,7 +58,18 @@
       <div class="container">
         <div id="user-profile">
           <!-- <h2>User Profile</h2> -->
-          <h4 class="my-3">البيانات الشخصية</h4>
+          <div class="d-flex justify-content-between">
+            <h4 class="my-3">البيانات الشخصية</h4>
+            <button
+              aria-label="button"
+              type="submit"
+              id="search-button"
+              class="btn btn-dark fw-bold me-3 px-4 align-self-center"
+              onclick="location.href = './edit-profile.html'"
+            >
+              تعديل
+            </button>
+          </div>
           <div class="row">
             <div class="col-12">
               <ul class="list-group p-0">
@@ -98,7 +112,7 @@
     </section>
     <script src="./static/js/bootstrap.min.js"></script>
     <script type="module" src="static/js/firebase.js"></script>
-    <script src="./static/js/index.js"></script>
+    <!-- <script src="./static/js/index.js"></script> -->
     <script type="module" src="static/js/profile.js"></script>
   </body>
 </html>

@@ -16,7 +16,7 @@
 
     <link href="./static/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./static/css/style.css" />
-    <title>العملاء</title>
+    <title>الرحلات</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -65,7 +65,7 @@
         <form id="search-form" class="mb-3 d-flex align-middle">
           <!-- <label for="search-input" class="form-label">بحث:</label> -->
           <input
-            type="text"
+            type="date"
             id="search-input"
             class="form-control"
             placeholder="ابحث عن طريق الاسم او رقم الهاتف"
@@ -95,7 +95,8 @@
             <th>اسم العميل</th>
             <th>رقم الهاتف</th>
             <th>الرحلة</th>
-            <th>تاريخ التسجيل</th>
+            <th>من</th>
+            <th>إلى</th>
             <th></th>
           </tr>
         </thead>
@@ -110,8 +111,6 @@
     </div>
     <script src="./static/js/bootstrap.min.js"></script>
     <script type="module" src="static/js/firebase.js"></script>
-    <!-- <script src="./static/js/print.js"></script> -->
-    <script type="module" src="./static/js/clients.js"></script>
-    <!-- <script src="./static/js/index.js"></script> -->
+    <script type="module" src="./static/js/trips.js"></script>
   </body>
 </html>

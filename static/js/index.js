@@ -27,12 +27,13 @@ const remainingAmountInput = document.getElementById("balance");
 const notesInput = document.getElementById("notes");
 const submitBtn = document.getElementById("submit");
 
-stayDurationInput.addEventListener("input", () => {
+let editDuration = () => {
   const stayDurationNights = document.querySelector(".stayDurationNights");
   if (stayDurationInput.value > 0) {
     stayDurationNights.innerText = Number(stayDurationInput.value) - 1;
   }
-});
+};
+stayDurationInput.addEventListener("input", editDuration);
 
 let remainingCalc = () => {
   remainingAmountInput.value =
