@@ -34,9 +34,9 @@ const querySnapshot = await getDocs(
 const snapSize = querySnapshot.size;
 // console.log(snapSize);
 
-const submitBtn = document.querySelector("#submit");
+// const submitBtn = document.querySelector("#submit");
 
-if (submitBtn) {
+if (myForm) {
   myForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = {
