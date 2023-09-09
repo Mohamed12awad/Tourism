@@ -25,7 +25,7 @@ const firebaseApp = initializeApp({
 });
 
 // Initialize Firebase
-const auth = getAuth(firebaseApp);
+const auth = getAuth(); // Initialize authentication separately
 const db = getFirestore(firebaseApp);
 
 const querySnapshot = await getDocs(
@@ -35,6 +35,7 @@ const snapSize = querySnapshot.size;
 // console.log(snapSize);
 
 // const submitBtn = document.querySelector("#submit");
+const myForm = document.getElementById("myForm");
 
 if (myForm) {
   myForm.addEventListener("submit", async (e) => {
