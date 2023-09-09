@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="شركة سحاب للسياحة" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>شركة سحاب للسياحة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link href=".././static/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href=".././static/css/style.css" />
+    <!-- favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href=".././static/imgs/icon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href=".././static/imgs/icon//favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href=".././static/imgs/icon//favicon-16x16.png"
+    />
+  </head>
+  <body class="bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <!-- Logo and Company Name -->
+        <a class="navbar-brand fs-4 d-flex align-items-center" href="./">
+          <img
+            src=".././static/imgs/logo1.png"
+            alt="Company Logo"
+            width="60"
+            height="60"
+            class="d-inline-block align-text-top ms-2"
+          />
+          شركة سحاب للسياحة
+        </a>
+
+        <!-- Navbar Toggler Button -->
+        <button
+          class="navbar-toggler d-print-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse d-print-none" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./clients.html">العملاء</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="./trips.html">الرحلات</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- ................................................................. -->
+    <section class="signin">
+      <div class="container">
+        <div class="row">
+          <div class="col-3 signin-data">
+            <h2 class="mb-4">تسجيل الدخول</h2>
+            <form id="signin-form">
+              <!-- <label for="email" class="form-label">Email</label> -->
+              <input
+                class="form-control mb-4"
+                type="email"
+                id="email"
+                placeholder="Email"
+                required
+              /><br />
+              <input
+                class="form-control"
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+              /><br />
+              <button class="btn btn-dark mt-4 px-4 w-100" type="submit">
+                دخول
+              </button>
+            </form>
+            <p id="error-message"></p>
+          </div>
+          <div class="col-9 text-center sign-img"></div>
+        </div>
+      </div>
+    </section>
+    <script type="module" src=".././static/js/firebase.js"></script>
+    <script type="module" src=".././static/js/sign-in.js"></script>
+  </body>
+</html>
